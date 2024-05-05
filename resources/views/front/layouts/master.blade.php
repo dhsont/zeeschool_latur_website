@@ -102,10 +102,10 @@
     <div class="row">
 
         <!-- Start left sidebar-->
-        @if(isset($nolsidebar))
-
-        @else
-            @include('front.layouts.partials.lsidebar')
+        @if(isset($leftSidebar))
+                @if($leftSidebar == true)
+                    @include('front.layouts.partials.lsidebar')
+                @endif
         @endif
         <!-- End left sidebar-->
 
@@ -127,14 +127,12 @@
         <!-- End Page content-->
 
 
-        @if(isset($norsidebar))
-        @else
-            <!-- Start right sidebar-->
 
-            @include('front.layouts.partials.rsidebar')
-            <!-- End right sidebar-->
+        @if(isset($rightSidebar))
+            @if($rightSidebar == true)
+                @include('front.layouts.partials.rsidebar')
+            @endif
         @endif
-
     </div>
 </div>
 <!-- end container-->

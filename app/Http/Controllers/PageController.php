@@ -97,16 +97,16 @@ class PageController extends AppBaseController
 			return redirect('/');
 		}
 
-        $nolsidebar = true;
-        $norsidebar = true;
+        $leftSidebar = true;
+        $rightSidebar = true;
 
 		if ($id == 'annual-function')
         {
-            $nolsidebar = true;
-            $norsidebar = true;
+            $leftSidebar = false;
+            $rightSidebar = false;
         }
 
-		return view('front.page',compact('page','nolsidebar','norsidebar'));
+		return view('front.page',compact('page','leftSidebar','rightSidebar'));
 		//return view('admin.pages.show')->with('page', $page);
 	}
 
