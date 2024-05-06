@@ -1,7 +1,7 @@
 @extends('admin.layouts.master')
 
 @section('title','pages')
-@stop
+
 
 @section('styles')
     <!-- BEGIN PAGE LEVEL STYLES -->
@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="/assets/admin/plugins/data-tables/DT_bootstrap.css"/>
     <!-- END PAGE LEVEL STYLES -->
 
-@stop
+@endsection
 
 @section('content')
     <div class="page-content-wrapper">
@@ -92,7 +92,7 @@
         <!-- BEGIN CONTENT -->
     </div>
 
-@stop
+@endsection
 
 @section('scripts')
     <!-- BEGIN PAGE LEVEL PLUGINS -->
@@ -115,4 +115,4 @@
         });
     </script>
 
-@stop
+@endsection

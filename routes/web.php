@@ -92,7 +92,7 @@ Route::group(['prefix' => 'myadmin', 'middleware' => 'auth'], function()
 
     Route::resource('api/pages', 'API\pageAPIController');
 
-    Route::resource('pages', 'PageController');
+    Route::resource('pages', '\App\Http\Controllers\PageController');
 
     Route::get('pages/{id}/delete', [    'as' => 'pages.delete', 'uses' => 'PageController@destroy',
     ]);
@@ -237,6 +237,13 @@ Route::get('news', function(){
     return view('front.news.index',compact('allnews'));
 });
 
+
+Route::get('/login', [\App\Http\Controllers\Auth\LoginController::class, 'loginForm'])->name('login');
+Route::post('/auth/login', [\App\Http\Controllers\Auth\LoginController::class, 'authenticate'])->name('loginPost');
+
+
+
+//Route::get('/login');
 Route::get('news/{slug}', function($slug){
 
     $news = App\Models\News::whereSlug($slug)->first();
